@@ -40,6 +40,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/portfolios/**").hasAnyRole("ADMIN", "PORTFOLIO_MANAGER")
                         .requestMatchers("/api/projects/**").hasAnyRole("ADMIN", "PORTFOLIO_MANAGER", "PROJECT_MANAGER")
                         .requestMatchers("/api/plans/**").hasAnyRole("ADMIN", "PORTFOLIO_MANAGER", "PROJECT_MANAGER")
+                        .requestMatchers("/api/tasks/**").hasAnyRole("ADMIN", "PORTFOLIO_MANAGER", "PROJECT_MANAGER")
                         .anyRequest().authenticated()
                 )
                 .httpBasic(Customizer.withDefaults())
